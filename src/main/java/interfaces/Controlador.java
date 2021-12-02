@@ -9,6 +9,11 @@ public interface Controlador {
 	
 	public Item anhadirABandeja(String descripcion);
 	
+	public Item anhadirABandeja(String descripcion, String info);
+	
 	public Map<Integer, String> mapaListas();
 	
+	public void setConjunto(ConjuntoItems ci);
+	public ConjuntoItems getConjunto();
+
 }

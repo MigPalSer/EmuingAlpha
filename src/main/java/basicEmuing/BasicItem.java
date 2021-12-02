@@ -8,14 +8,14 @@ import interfaces.Item;
 
 public class BasicItem implements Item {
 
-	private String descripcion_corta, info_adicional;
-	private boolean completada, deadline, ventana, resultado_asociado, alerta, esResultado, hibernar;
-	private LocalDateTime fecha_deadline, fin_hibernacion;
-	private LocalTime inicio_ventana, fin_ventana, inicio_alerta;
-	private Item resultado_padre;
-	private int lista, id;
+	 protected String descripcion_corta, info_adicional;
+	 protected boolean completada, deadline, ventana, resultado_asociado, alerta, esResultado, hibernar;
+	 protected LocalDateTime fecha_deadline, fin_hibernacion;
+	 protected LocalTime inicio_ventana, fin_ventana, inicio_alerta;
+	 protected Item resultado_padre;
+	 protected int lista, id;
 	
-	public boolean mostrar(Controlador c) {
+	public boolean mostrable(Controlador c) {
 		if(completada)return false;
 		if(ventana) {
 			//TODO
