@@ -1,5 +1,6 @@
 package interfaces;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
@@ -53,5 +54,10 @@ public interface Item {
 	public int getId();
 	public void setId(int id);
 
+	public LocalDate getFecha_creacion();
+	public void setFecha_creacion(LocalDate fecha_creacion);
+
+	public LocalDate getFecha_completado();
+	public void setFecha_completado(LocalDate fecha_completado);
 	
 }

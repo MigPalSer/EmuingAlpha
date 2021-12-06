@@ -1,5 +1,6 @@
 package basicEmuing;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
@@ -11,6 +12,7 @@ public class BasicItem implements Item {
 	 protected String descripcion_corta, info_adicional;
 	 protected boolean completada, deadline, ventana, resultado_asociado, alerta, esResultado, hibernar;
 	 protected LocalDateTime fecha_deadline, fin_hibernacion;
+	 protected LocalDate fecha_creacion, fecha_completado;
 	 protected LocalTime inicio_ventana, fin_ventana, inicio_alerta;
 	 protected Item resultado_padre;
 	 protected int lista, id;
@@ -40,13 +42,15 @@ public class BasicItem implements Item {
 	public BasicItem(String descripcion_corta) {
 		super();
 		this.descripcion_corta = descripcion_corta;
-		completada=false;
-		deadline=false;
-		ventana=false;
-		resultado_asociado=false;
-		alerta=false;
-		esResultado=false; 
-		hibernar=false;
+		this.completada=false;
+		this.deadline=false;
+		this.ventana=false;
+		this.resultado_asociado=false;
+		this.alerta=false;
+		this.esResultado=false; 
+		this.hibernar=false;
+		this.fecha_creacion=LocalDate.of(20, 7, 1992);
+		this.fecha_completado=LocalDate.of(11,7,2021);
 	}
 
 	//Getters y setters a continuación
@@ -186,6 +190,22 @@ public class BasicItem implements Item {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public LocalDate getFecha_creacion() {
+		return fecha_creacion;
+	}
+
+	public void setFecha_creacion(LocalDate fecha_creacion) {
+		this.fecha_creacion = fecha_creacion;
+	}
+
+	public LocalDate getFecha_completado() {
+		return fecha_completado;
+	}
+
+	public void setFecha_completado(LocalDate fecha_completado) {
+		this.fecha_completado = fecha_completado;
 	}
 
 	

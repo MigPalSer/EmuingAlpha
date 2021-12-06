@@ -1,0 +1,9 @@
+Vista de contexto:
+Se compone de tres partes, todas ellas con items no completados:
+-Superior: eventos con fecha cumplida y mostrables
+-Medio: tareas del contexto que sean mostrables
+-Inferior: tareas de la lista de recordatorio mostrables,
+ tareas con alerta de cualquier lista cuya hora y fecha sea adecuada y sean mostrables,
+ items con deadline fuera de calendario que esten proximos a cumplirse (el limite de dias lo marca controlador) o cumplidos [tipo especial, no completable]
+ 
+ 
