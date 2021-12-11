@@ -7,9 +7,7 @@ import java.time.LocalTime;
 public interface Item {
 
 	public boolean mostrable(Controlador c);
-	
-	public void completar();
-	
+		
 	//Getters y setters
 	/*
 	 * protected String descripcion_corta, info_adicional;

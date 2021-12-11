@@ -12,7 +12,7 @@ public class CriterioContexto implements CriterioBusqueda {
 	}
 
 	@Override
-	public boolean buscar(Item i) {
+	public boolean verificar(Item i) {
 
 		return i.getLista()==lista&&i.isCompletada()==false;
 	}

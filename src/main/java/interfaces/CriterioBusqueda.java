@@ -1,5 +1,5 @@
 package interfaces;
 
 public interface CriterioBusqueda {
-	public boolean buscar(Item i);
+	public boolean verificar(Item i);
 }

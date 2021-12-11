@@ -18,7 +18,7 @@ public class TestReceptor {
 		
 		do {
 			String comando=scn.nextLine();
-			if(!bc.ejecutaCMD(comando))activo=false;
+			if(!bc.ejecutarCMD(comando))activo=false;
 		} while (activo);
 	}
 

@@ -14,7 +14,7 @@ public class ManualTest {
 	public static void main(String[] args) {
 		ConjuntoItems conjunto=FabricaTest.conjunto1();
 		
-		Set<Item> a=conjunto.itemsQuery(i-> {
+		Set<Item> a=conjunto.busqueda(i-> {
 			return i.getLista()==1002;});
 		
 		for(Item i: a) {

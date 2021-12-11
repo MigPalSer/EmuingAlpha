@@ -4,19 +4,14 @@ import java.util.Set;
 
 public interface ConjuntoItems {
 
-	/*
-	public List<Item> itemsPorLista(int lista);
 
-	public List<Item> itemsConAlerta();
+	public Set<Item> busqueda(CriterioBusqueda criterio);
 
-	public List<Item> itemsConDeadline();
-	*/
+	public Set<Item> todos();
 	
-	public Set<Item> itemsQuery(CriterioBusqueda criterio);
-
-	public Set<Item> todosItems();
+	public Item obtener(int id);
 	
-	//public void add(Item i);
+	public void anhadir(Item i);
 
 	
 }

@@ -3,6 +3,7 @@ package basicEmuing;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Month;
 
 import interfaces.Controlador;
 import interfaces.Item;
@@ -49,8 +50,8 @@ public class BasicItem implements Item {
 		this.alerta=false;
 		this.esResultado=false; 
 		this.hibernar=false;
-		this.fecha_creacion=LocalDate.of(20, 7, 1992);
-		this.fecha_completado=LocalDate.of(11,7,2021);
+		this.fecha_creacion=LocalDate.of(1992, Month.JULY, 20);
+		this.fecha_completado=LocalDate.of(2021, Month.JULY,11);
 	}
 
 	//Getters y setters a continuación

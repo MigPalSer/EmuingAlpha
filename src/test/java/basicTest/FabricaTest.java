@@ -1,7 +1,7 @@
 package basicTest;
 
 import basicEmuing.BasicItem;
-import basicEmuing.ItemsSet;
+import basicEmuing.ConjuntoSet;
 import interfaces.ConjuntoItems;
 
 public class FabricaTest {
@@ -13,7 +13,7 @@ public class FabricaTest {
 	 *Lista 1003 tiene items 5, 6 
 	 * */
 	public static ConjuntoItems conjunto1() {
-		ItemsSet conjunto1=new ItemsSet();
+		ConjuntoSet conjunto1=new ConjuntoSet();
 		BasicItem item1=new BasicItem("item1");
 		BasicItem item2=new BasicItem("item2");
 		BasicItem item3=new BasicItem("item3");
