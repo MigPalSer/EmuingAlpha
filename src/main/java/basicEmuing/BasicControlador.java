@@ -28,7 +28,6 @@ public class BasicControlador implements Controlador {
 	protected String cmd_retroceso;
 	
 	public BasicControlador() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -38,33 +37,46 @@ public class BasicControlador implements Controlador {
 
 	@Override
 	public Item anhadirABandeja(String descripcion) {
-		// TODO Auto-generated method stub
-		return null;
+		Item i=new BasicItem(descripcion);
+		i.setLista(0);
+		i.setId(asignarIDItem());
+		conjunto.anhadir(i);
+		//TODO persistencia
+		return i;
 	}
 
 	@Override
 	public Item anhadirABandeja(String descripcion, String info) {
-		// TODO Auto-generated method stub
-		return null;
+		Item i=new BasicItem(descripcion);
+		i.setInfo_adicional(info);
+		i.setLista(0);
+		i.setId(asignarIDItem());
+		conjunto.anhadir(i);
+		//TODO persistencia
+		return i;
 	}
 
+	public int asignarIDItem() {
+		//TODO
+		return 0;
+	}
 
 	@Override
 	public void retrocederVista() {
-		// TODO Auto-generated method stub
-		
+		ejecutarCMD(cmd_retroceso);
 	}
 
 	@Override
 	public void notificarMostradores() {
-		// TODO Auto-generated method stub
-		
+		for (Mostrador mostrador : lista_mostradores) {
+	mostrador.actualizar();
+}		
 	}
 
 	@Override
 	public void generarVista(int idl, String arg) {
-		// TODO Auto-generated method stub
-		
+		cmd_retroceso=vista_actual.cmdRecarga();
+		vista_actual=mapa_generadores.get(idl).genera(idl, arg);
 	}
 	
 	public boolean ejecutarCMD(String s) {
@@ -72,42 +84,15 @@ public class BasicControlador implements Controlador {
 		//s+=" $";
 		String[] argumentos=s.split("\\s+");
 		
+		argumentos=vista_actual.alias(argumentos);
+		
 		String cmd=argumentos[0];
 		if(cmd.equals("exit"))return false;
 		
-		switch (cmd) {
-		case "vista_id":
-			int vista=Integer.parseInt(argumentos[1]);
-			String arg=argumentos.length>2?argumentos[2]:"";
-			vista_actual=mapa_generadores.get(vista).genera(vista, arg);
-			break;
-			
-		case "captura":
-			String def_corta="";
-			String info_adicional="";
-			boolean def=true;
-			//construimos el string correspondiente de definición e info adicional, que en el comando separamos con //
-			for (int i = 1; i < argumentos.length; i++) {
-				String str=argumentos[i];
-				if(str.equals("//")) {
-					def=false;
-					continue;
-				}
-				if(def) {
-					def_corta+=str;
-				}else {
-					info_adicional+=str;
-				}
-			}
-			//Dependiendo de si hay info adicional, usamos anhadirABandeja con uno u otro argumento.
-			if(info_adicional.equals("")) {
-				anhadirABandeja(def_corta);
-			}else {
-				anhadirABandeja(def_corta, info_adicional);
-			}
-		default:
-			break;
+		if(mapa_comandos.containsKey(cmd)) {
+			mapa_comandos.get(cmd).ejecutar(this, argumentos);
 		}
+		
 		
 		return true;
 	}

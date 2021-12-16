@@ -10,8 +10,7 @@ public class Vista_id implements Comando {
 	public void ejecutar(Controlador ctrl, String[] args) {
 		int vista_id=Integer.parseInt(args[1]);
 		String arg=args.length>2?args[2]:"";
-		Vista vista_actual=ctrl.getMapa_generadores().get(vista_id).genera(vista_id, arg);
-		ctrl.setVista_actual(vista_actual);
+		ctrl.generarVista(vista_id, arg);
 	}
 
 }
